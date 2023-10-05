@@ -9,6 +9,8 @@ workflows:
           package-name: mad
           expected-version: << pipeline.git.tag >>
           filters:
+            branches:
+              ignore: /.*/
             tags:
               only: /v.*/
       - elixir/precompile_for_macos_arm:
